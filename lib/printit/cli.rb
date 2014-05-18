@@ -1,13 +1,14 @@
 require 'thor'
 require 'ruby-progressbar'
+require 'printit/job'
 
 module PrintIt
   class CLI < Thor
-    desc "run", "run the job in job.json"
-    def run
-      progress-bar = ProgressBar.create(:title => 'Loading', :total => nil)
-      job = Job.new('./job.json')
-      progress-bar.log 'Loaded job.json'
+    desc "now", "run the job in job.json"
+    def now
+      progress_bar = ProgressBar.create(:title => 'Loading', :total => nil)
+      job = PrintIt::Job.new('./job.json')
+      progress_bar.log 'Loaded job.json'
       # Do the stuff
     end
   end

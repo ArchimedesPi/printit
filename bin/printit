@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
 require 'printit/cli'
-PrintIt:CLI.start
+PrintIt::CLI.start

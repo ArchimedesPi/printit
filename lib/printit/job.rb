@@ -1,4 +1,6 @@
 require 'multi_json'
+require 'printit/part'
+require 'printit/printer'
 
 module PrintIt
   class Job
@@ -9,12 +11,15 @@ module PrintIt
       @name = data[:name]
       @description = data[:description]
       @slicer = data[:slicer]
+      @printers ||= []
       data[:printers].each do |printer|
-        @printers << Printer.new(printer)
+        @printers << PrintIt::Printer.new(printer)
       end
       
+      @parts ||= []
+      
       data[:parts].each do |part|
-        @parts << Part.new(part)
+        @parts << PrintIt::Part.new(part)
       end
     end
     

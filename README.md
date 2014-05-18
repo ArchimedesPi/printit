@@ -4,7 +4,15 @@ S67 batch print job system
 ==========================
 
 ## Installation
+
+### Dependencies:
+
+- [our fork of Printrun](https://github.com/ArchimedesPi/Printrun) in search path
+- Skeinforge in search path
+
+### Gem
 `gem install printit` (Ahhh, ruby ;)
+
 
 ## How to use
 

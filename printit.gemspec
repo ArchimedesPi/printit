@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor', '~> 0.19.1'
   spec.add_dependency 'oj', '~> 2.9.3'
   spec.add_dependency 'multi_json', '~> 1.10.0'
+  spec.add_dependency 'ruby-progressbar', '~> 1.5.1'
 end

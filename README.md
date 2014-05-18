@@ -27,11 +27,25 @@ The directory tree should be similar to this example:
                    |_ job.json
                    |_ stls/
                      |_ mypart1.stl
-                     |_ joespart2.stl
+                     |_ jimspart2.stl
                      |_ standoff.stl
 ````
 
 Then you must populate `job.json` with metadata about the print job, as in this example:
-
-
+````json
+{
+  "name": "wow"
+  "description": "best example ever",
+  "slicer": "skeinforge",
+  "printers": [
+    { "name": "Rep2", "port": "/dev/ttyUSB0", "extruder": "right" }
+    { "name": "FlashForge1", "port": "/dev/ttyUSB1", "extruder": "left" }
+  ],
+  "parts": [
+    { "name": "My part 1", file: "mypart1.stl", multiplier: 3, "tile": true }
+    { "name": "Jim's part 2", file: "jimspart2.stl" }
+    { "name": "Standoff", file: "standoff", "multiplier": 2, "tile": false}
+  ]
+}
+````
 

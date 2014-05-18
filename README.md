@@ -24,9 +24,6 @@ The directory tree should be similar to this example:
 ````
 
 Then you must populate `bom.json` with metadata about the print job, as in this example:
-````json
-name: wow
-description: A great example project
 
 
 

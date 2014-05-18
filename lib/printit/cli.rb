@@ -9,6 +9,7 @@ module PrintIt
       progress_bar = ProgressBar.create(:title => 'Loading', :total => nil)
       job = PrintIt::Job.new('./job.json')
       progress_bar.log 'Loaded job.json'
+      progress_bar.log "Using Slic3r #{PrintIt.slic3r_version}"
       # Do the stuff
     end
   end

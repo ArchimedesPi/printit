@@ -1,6 +1,6 @@
 require 'multi_json'
-require 'printit/part'
 require 'printit/printer'
+require 'printit/part'
 
 module PrintIt
   class Job

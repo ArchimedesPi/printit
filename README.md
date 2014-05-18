@@ -38,8 +38,8 @@ Then you must populate `job.json` with metadata about the print job, as in this 
   "description": "best example ever",
   "slicer": "skeinforge",
   "printers": [
-    { "name": "Rep2", "port": "/dev/ttyUSB0", "extruder": "right" },
-    { "name": "FlashForge1", "port": "/dev/ttyUSB1", "extruder": "left" }
+    { "name": "Rep2", "type":"makerbot.replicator", "port": "/dev/ttyUSB0", "extruder": "right", "firmware": ">7" },
+    { "name": "FlashForge1", "type":"makerbot.replicator", "port": "/dev/ttyUSB1", "extruder": "left", "firmware": ">7" }
   ],
   "parts": [
     { "name": "My part 1", "file": "mypart1.stl",       "multiplier": 3, "tile": true },

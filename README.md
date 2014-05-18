@@ -9,21 +9,21 @@ S67 batch print job system
 ## How to use
 
 Create a directory for your project.
-In that directory, create a file `bom.json`, and a directory `stls`.
+In that directory, create a file `job.json`, and a directory `stls`.
 Move all your STLs into the `stls` directory.
 The directory tree should be similar to this example:
 ````
         - ~/Models/
             |_ ArchimedesPi/
                 |_ wow-example/
-                   |_ bom.json
+                   |_ job.json
                    |_ stls/
                      |_ mypart1.stl
                      |_ joespart2.stl
                      |_ standoff.stl
 ````
 
-Then you must populate `bom.json` with metadata about the print job, as in this example:
+Then you must populate `job.json` with metadata about the print job, as in this example:
 
 
 

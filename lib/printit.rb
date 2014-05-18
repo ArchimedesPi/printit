@@ -1,5 +1,5 @@
 require "printit/version"
 
-module Printit
+module PrintIt
   # Your code goes here...
 end

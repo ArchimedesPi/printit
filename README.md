@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/ArchimedesPi/printit.png)](https://codeclimate.com/github/ArchimedesPi/printit)
+
 S67 batch print job system
 ==========================
 

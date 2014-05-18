@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["archimedespi3141@gmail.com"]
   spec.summary       = "Large 3d print job automator/batcher"
   spec.description   = "Automates long running, heinous, (especially part creation) 3d-prints"
-  spec.homepage      = "archimedespi.github.io/printit"
+  spec.homepage      = "http://archimedespi.github.io/printit"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

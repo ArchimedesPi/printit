@@ -5,7 +5,7 @@ require 'printit/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "printit"
-  spec.version       = Printit::VERSION
+  spec.version       = PrintIt::VERSION
   spec.authors       = ["ArchimedesPi"]
   spec.email         = ["archimedespi3141@gmail.com"]
   spec.summary       = "Large 3d print job automator/batcher"

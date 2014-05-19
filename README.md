@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/archimedespi/printit.png?label=ready&title=Ready)](https://waffle.io/archimedespi/printit)
 [![Code Climate](https://codeclimate.com/github/ArchimedesPi/printit.png)](https://codeclimate.com/github/ArchimedesPi/printit) [![Dependency Status](https://gemnasium.com/ArchimedesPi/printit.svg)](https://gemnasium.com/ArchimedesPi/printit)
 
 S67 batch print job system

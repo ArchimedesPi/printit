@@ -8,11 +8,12 @@ module PrintIt
       @type = spec[:type]
       @port = spec[:port]
       @extruder = spec[:extruder]
-      @priority = spec[:extruder] || 0
+      @priority = spec[:priority] || 0
       @running = spec[:running] || false
     end
     
     def print(part, spec={})
+      # Grab the part gcode and print it
       IO.popen("printcore.py #{port} #{part.slicedfile}")
     end
   end

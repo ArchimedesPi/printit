@@ -11,9 +11,9 @@ module PrintIt
       @tile = spec[:tile] || false
     end
     
-    def slice(spec=nil, outputfile=nil)
+    def slice(config=nil, outputfile=nil)
       outputfile ||= "./gcode/#{Pathname.new(@file).basename}"
-      PrintIt::Slicer.slice(@file, @outputfile, spec)
+      IO.popen("slic3r --output #{outputfile} #{file}")
     end
 
     def print(printer, options={})

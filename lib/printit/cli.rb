@@ -11,6 +11,7 @@ module PrintIt
       progress_bar.log 'Loaded job.json'
       progress_bar.log "Using Slic3r #{PrintIt.slic3r_version}"
       # Do the stuff
+      job.start({:progressbar => progress_bar})
     end
   end
 end

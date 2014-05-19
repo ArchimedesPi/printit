@@ -13,9 +13,9 @@ module PrintIt
     end
     
     def slice(config=nil, outfile=nil)
-      outfile ||= @outputfile
+      outfile ||= @slicedfile
       IO.popen("slic3r --output #{outfile} #{file}")
-      @outputfile = outfile
+      @slicedfile = outfile
     end
   end
 end

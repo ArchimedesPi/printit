@@ -1,4 +1,3 @@
-require 'pathname'
 
 module PrintIt
   class Part
@@ -9,13 +8,11 @@ module PrintIt
       @file = "./stls/#{spec[:file]}"
       @multiplier = spec[:multiplier] || 1
       @tile = spec[:tile] || false
-      @silcedfile = "./gcode/#{Pathname.new(@file).basename}"
+      @slicedfile = "./gcode/#{File.basename(@file, '.*')}.gcode"
     end
     
-    def slice(config=nil, outfile=nil)
-      outfile ||= @slicedfile
-      IO.popen("slic3r --output #{outfile} #{file}")
-      @slicedfile = outfile
+    def slice(config={})
+      IO.popen("slic3r --output #{@slicedfile} #{@file}")
     end
   end
 end

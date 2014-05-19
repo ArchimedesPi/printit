@@ -12,7 +12,11 @@ module PrintIt
     end
     
     def slice(config={})
-      IO.popen("slic3r --output #{@slicedfile} #{@file}")
+      slicer = IO.popen("slic3r --output #{@slicedfile} #{@file}")
+      slicer.each {|l| print l}
+      Process.kill("TERM", slicer.pid)
+      slicer.close
+      # done
     end
   end
 end

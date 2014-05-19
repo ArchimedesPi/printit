@@ -1,12 +1,14 @@
 require 'multi_json'
 require 'printit/printer'
 require 'printit/part'
+require 'thread'
 
 module PrintIt
   class Job
     attr_reader :name, :description, :slicer, :printers
-    attr_accessor :parts
+    attr_accessor :parts, :print_queue
     def initialize(file)
+      @print_queue = Queue.new
       data = MultiJson.load(File.read(file), :symbolize_keys => true)
       @name = data[:name]
       @description = data[:description]
@@ -17,15 +19,20 @@ module PrintIt
       end
       
       @parts ||= []
-      
       data[:parts].each do |part|
-        @parts << PrintIt::Part.new(part)
-      end
+        @print_queue << PrintIt::Part.new(part)
+      end        
     end
     
-    def start(options)
+    def start(options={})
+      printers.each do |printer|
+        p printer
+        Thread.new do
+        end
+      end
+      puts "Started threads"
     end
-    def stop(hard)
+    def stop(options={:hard=>false})
     end
   end
 end

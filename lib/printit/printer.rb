@@ -11,5 +11,9 @@ module PrintIt
       @priority = spec[:extruder] || 0
       @running = spec[:running] || false
     end
+    
+    def print(part, spec={})
+      IO.popen("printcore.py #{port} #{part.slicedfile}")
+    end
   end
 end

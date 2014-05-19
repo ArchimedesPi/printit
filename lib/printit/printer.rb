@@ -15,7 +15,6 @@ module PrintIt
     def print(part, spec={})
       # Grab the part gcode and print it
       printer = IO.popen("printcore.py #{port} #{part.slicedfile}")
-      
     end
   end
 end

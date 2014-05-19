@@ -1,6 +1,7 @@
 require 'multi_json'
 require 'printit/printer'
 require 'printit/part'
+require 'printit/interface'
 require 'thread'
 
 module PrintIt

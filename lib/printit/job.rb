@@ -26,24 +26,22 @@ module PrintIt
     end
     
     def start(options={})
+      threads = []
       printers.each do |printer|
-        p printer
-        Thread.new(printer) do |printer|
-          until @print_queue.empty do
+        threads << Thread.new(printer) do |printer|
+          until @print_queue.empty? do
             part = @print_queue.pop
-            puts "Working on #{part.name} on #{printer.name}"
-            puts "Slicing #{part.file} to #{part.slicedfile}"
+            puts "Working on #{part.name} on printer #{printer.name}"
+            puts "Slicing #{part.name} from file #{part.file} to #{part.slicedfile}"
             part.slice
-            puts "Sliced #{part.name}."
-            puts "Printing #{part.name} on #{printer.name}"
-            printer.print(part)
-            puts "Printed #{part.name}"
-            puts "Waiting for removal from print bed on #{printer.name}"
-            PrintIt::Interface.confirm("Remove the part #{part.name} from the printbed of #{printer.name}")
+            puts "Sliced #{part.name} from file #{part.file} to #{part.slicedfile}"
+            puts "Printing #{part.name} from GCode #{part.slicedfile} on #{printer.name} through #{printer.port} on the #{printer.extruder} extruder"
           end
         end
       end
-      puts "Started threads"
+      threads.each do |thread|
+        thread.join
+      end
     end
     def stop(options={:hard=>false})
     end

@@ -1,4 +1,3 @@
-
 module PrintIt
   class Part
     attr_reader :name, :file, :multiplier, :tile, :slicedfile
@@ -13,7 +12,7 @@ module PrintIt
     
     def slice(config={})
       slicer = IO.popen("slic3r --output #{@slicedfile} #{@file}")
-      slicer.each {|l| print l}
+      slicer.each {|l| print "#{@name}::#{l}"}
       Process.kill("TERM", slicer.pid)
       slicer.close
       # done

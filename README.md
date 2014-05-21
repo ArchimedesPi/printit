@@ -43,7 +43,7 @@ Then you must populate `job.json` with metadata about the print job, as in this 
     { "name": "FlashForge1", "type":"makerbot.replicator", "port": "/dev/ttyUSB1", "extruder": "left", "firmware": ">7" }
   ],
   "parts": [
-    { "name": "My part 1", "file": "mypart1.stl",       "multiplier": 3, "tile": true },
+    { "name": "My part 1", "file": "mypart1.stl", "multiplier": 3, "tile": true },
     { "name": "Jim's part 2", "file": "jimspart2.stl" },
     { "name": "Standoff", "file": "standoff", "multiplier": 2, "tile": false}
   ]

@@ -15,6 +15,8 @@ module PrintIt
     def print(part, spec={})
       # Grab the part gcode and print it
       printer = IO.popen("printcore.py #{port} #{part.slicedfile}")
+      printer.each {|l| print "#{part.name}".colorize(:light_white),"::#{l}%"}
+      Process.kill("TERM", printer.pid)
     end
   end
 end

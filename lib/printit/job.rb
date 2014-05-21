@@ -3,6 +3,7 @@ require 'printit/printer'
 require 'printit/part'
 require 'printit/interface'
 require 'thread'
+require 'colorize'
 
 module PrintIt
   class Job
@@ -31,11 +32,11 @@ module PrintIt
         threads << Thread.new(printer) do |printer|
           until @print_queue.empty? do
             part = @print_queue.pop
-            puts "Working on #{part.name} on printer #{printer.name}"
-            puts "Slicing #{part.name} from file #{part.file} to #{part.slicedfile}"
+            puts "Working on #{part.name} on printer #{printer.name}".colorize(:green)
+            puts "Slicing #{part.name} from file #{part.file} to #{part.slicedfile}".colorize(:blue)
             part.slice
-            puts "Sliced #{part.name} from file #{part.file} to #{part.slicedfile}"
-            puts "Printing #{part.name} from GCode #{part.slicedfile} on #{printer.name} through #{printer.port} on the #{printer.extruder} extruder"
+            puts "Sliced #{part.name} from file #{part.file} to #{part.slicedfile}".colorize(:green)
+            puts "Printing #{part.name} from GCode #{part.slicedfile} on #{printer.name} through #{printer.port} on the #{printer.extruder} extruder".colorize(:magenta)
           end
         end
       end

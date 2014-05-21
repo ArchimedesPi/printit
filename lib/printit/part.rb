@@ -1,3 +1,5 @@
+require 'colorize'
+
 module PrintIt
   class Part
     attr_reader :name, :file, :multiplier, :tile, :slicedfile
@@ -12,7 +14,7 @@ module PrintIt
     
     def slice(config={})
       slicer = IO.popen("slic3r --output #{@slicedfile} #{@file}")
-      slicer.each {|l| print "#{@name}::#{l}"}
+      slicer.each {|l| print "#{@name}".colorize(:light_white), "::#{l}".colorize(:light_blue)}
       Process.kill("TERM", slicer.pid)
       slicer.close
       # done

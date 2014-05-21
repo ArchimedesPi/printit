@@ -17,6 +17,8 @@ module PrintIt
       printer = IO.popen("printcore.py #{port} #{part.slicedfile}")
       printer.each {|l| print "#{part.name}".colorize(:light_white),"::#{l}%"}
       Process.kill("TERM", printer.pid)
+      printer.close
+      # done
     end
   end
 end

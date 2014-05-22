@@ -8,7 +8,6 @@ S67 batch print job system
 
 ### Dependencies:
 
-- [our fork of Printrun](https://github.com/ArchimedesPi/Printrun) in search path
 - Slic3r
 
 ### Gem
@@ -37,15 +36,15 @@ Then you must populate `job.json` with metadata about the print job, as in this 
 {
   "name": "wow",
   "description": "best example ever",
-  "slicer": "skeinforge",
+  "slicer": "slic3r",
   "printers": [
-    { "name": "Rep2", "type":"makerbot.replicator", "port": "/dev/ttyUSB0", "extruder": "right", "firmware": ">7" },
-    { "name": "FlashForge1", "type":"makerbot.replicator", "port": "/dev/ttyUSB1", "extruder": "left", "firmware": ">7" }
+    { "name": "Rep2", "type":"makerbot.replicator", "connection": "http://reptwo.local:5000", "extruder": "right", "firmware": ">7" },
+    { "name": "FlashForge1", "type":"makerbot.replicator", "connection": "http://flashone.local:5000", "extruder": "left", "firmware": ">7" }
   ],
   "parts": [
     { "name": "My part 1", "file": "mypart1.stl", "multiplier": 3, "tile": true },
-    { "name": "Jim's part 2", "file": "jimspart2.stl" },
-    { "name": "Standoff", "file": "standoff", "multiplier": 2, "tile": false}
+    { "name": "Jim's part 2", "file": "jimspart2.stl" }/*,
+    { "name": "Standoff", "file": "standoff.stl", "multiplier": 2, "tile": false}*/
   ]
 }
 ````

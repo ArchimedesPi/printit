@@ -23,3 +23,5 @@ mkmf.log
 job.json
 stls/
 gcode/
+bom.*
+stl/
